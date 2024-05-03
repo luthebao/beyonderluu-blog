@@ -1,0 +1,68 @@
+---
+title: Python basic 3 - Set up python environment 
+tags: ["pythonbasic"]
+images: ['/blog/pythonbasic/3/1.png']
+date: "2019-02-14"
+summary: After a while of studying with Python, I decided to write a blog to summarize what I have learned or my way of learning about this language.
+draft: true
+---
+
+Chào các bạn.
+
+Ở bài viết trước mình có giới thiệu về Google Colab được sử dụng như là môi trường có sẵn của google và chúng ta chỉ việc sử dụng ké. Nhưng do nhiều bạn có thể muốn được sử dụng offline thì hôm này mình sẽ hướng dẫn cách cài đặt python trên máy tính và cài đặt công cụ editor Visual Studio Code.
+Vì sao lại sử dụng Visual Studio Code ? Vì mình thích cài này hơn :)) ngoài ra còn có Sublime Text cũng khá thuận lợi cho việc code python nên các bạn có thể tham khảo cách cài đặt trên mạng nhé.
+
+__Cách cài đặt python lên máy tính__
+
+Đầu tiên các bạn vào trang chủ của Python là [https://www.python.org](https://www.python.org) Sau đó trỏ vào mục Downloads và chọn hệ điều hành mà bạn đang sử dụng. Ví dụ mình đang sử dụng Mac OS thì mình sẽ chọn vào MacOS
+
+<Image src="/blog/pythonbasic/3/1.png" width="300" height="150" />
+
+Tiếp đến bên cột Stable Release, nếu sử dụng windows thì các bạn chọn vào Windows x86-64 executable installer để tải. Còn phiên bản thì cứ chơi hẳn phiên bản mới nhất. Hoặc sử dụng phiên bản __3.7.5__ (vì mình đang xài cái này) do có nhiều thư viện chưa update kịp để hỗ trợ
+
+<Image src="/blog/pythonbasic/3/2.png" width="300" height="150" />
+
+Sau khi tải xong, chúng ta bắt đầu cài đặt. Ở MacOs thì chỉ cần next next rồi ok là xong rồi, còn ở windows thì hơi lằng nhằng 1 tẹo. Các bạn hãy tích vào như hình dưới nhé.
+
+<Image src="/blog/pythonbasic/3/3.png" width="300" height="150" />
+
+Sau khi cài xong, các bạn mở terminal hay command line lên. Ở mac thì command + dấu cách rồi gõ terminal để khởi động. Còn windows thì chỉ cần search "cmd" ở ô search windows là mở lên thôi.
+
+Sau khi mở lên terminal, các bạn gõ lệnh sau để kiểm tra phiên bản cài đặt của python:
+
+```js
+python --version
+```
+
+<Image src="/blog/pythonbasic/3/4.png" width="300" height="150" />
+
+Nếu nó hiện đúng như phiên bản đã cài thì các bạn oke đã cài thành công rồi đó. 
+
+Đến đây 1 số bạn dùng Mac sẽ giật bắn mình lên vì nó sẽ hiện phiên bản 2.7 thì cũng đừng quá lo lắng nhé. Mac sẽ mặc định phiên bản 2.7 cho mình, nếu muốn sửa lại phiên bản thì hãy làm theo hướng dẫn sau: 
+
+1. Mở terminal lên gõ:
+
+```js
+sudo nano ~/.bash_profile
+```
+
+Lúc đó terminal sẽ hiện như thế này
+
+<Image src="/blog/pythonbasic/3/5.png" width="300" height="150" />
+
+2. Sau đó thêm 2 dòng vào file bash_profile:
+
+```js
+alias python=python3 
+alias pip=pip3
+```
+
+<Image src="/blog/pythonbasic/3/6.png" width="300" height="150" />
+
+3. Tiếp đó lưu file lại bằng cách ấn Ctrl + X. Ấn chữ Y là yes. Sau đó ấn enter là file đã lưu rồi. Sau đó khởi động lại máy và thử mở terminal lên gõ python xem nhé.
+
+Tương tự với Visual Studio Code, các bạn chỉ việc tải về và cài đặt thông thường thôi. Đối với mac os các bạn tải bản Stable, tải về kéo nó vào Application là sẽ sử dụng không cần cài đặt như Windows nhé
+
+> Link VSCode: [https://code.visualstudio.com](https://code.visualstudio.com)
+
+Vậy là đã xong bài viết thứ 3 về cách cài đặt môi trường python trên máy tính rồi nhé, hãy theo dõi bài viết tiếp theo về Python basic.

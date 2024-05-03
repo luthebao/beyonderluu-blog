@@ -1,0 +1,76 @@
+---
+title: Python basic 5 - Variables and comments
+tags: ["pythonbasic"]
+images: ['/blog/pythonbasic/1/1.jpg']
+date: "2019-02-16"
+summary: After a while of studying with Python, I decided to write a blog to summarize what I have learned or my way of learning about this language.
+draft: true
+---
+
+Chào các bạn.
+
+Ở bài trước chúng ta đã học được cách chạy một chương trình python và cách sử dụng công cụ VSCode.
+
+Bây giờ chúng ta sang bài mới và học về cách ghi chú trong chương trình python và biến.
+
+### **Ghi chú trong python**
+
+Ghi chú là cách chúng ta note lại những hướng dẫn hoặc những lưu ý nào đó để khi đọc lại chương trình python chúng ta có thể hiểu được lúc viết code chúng ta nghĩ gì.
+
+Ở python, 1 dòng ghi chú thường bắt đầu bằng dấu "#", ghi các bạn dùng ghi chú, các chữ sau dấu # sẽ biến thành màu xanh và không ảnh hưởng đến code. Các bạn có thể ghi sau câu lệnh hoặc ghi ở dòng trên câu lệnh cần note
+
+z/blog/pythonbasic/5/1.png" width="300" height="150" />
+
+Trong VSCode, có phím tắt để biến 1 dòng thành ghi chú đó là "Ctrl + K C" (với windows) và "Command + K C" (với macos) tức là ấn giữ phím ctrl/command rồi ấn lần lượt phím K và phím C. Để đưa 1 ghi chú về lại bình thường thì Ctrl/Command + K U.
+
+### **Biến trong python**
+
+Biến là tên của 1  vùng trong bộ nhớ RAM được sử dụng để lưu trữ thông tin. Ví dụ trong toán học các bạn đã biến về cách đặt biến thành x, y, ... thì biến trong lập trình cũng được sử dụng với mục đích tương tự.
+
+Sử dụng biến sẽ giúp chúng ta lấy lại giá trị nhanh hơn và gọn hơn. Có thể hiểu biến như là nickname Tèo của bạn, thay vì anh chị em gia đình gọi đầy đủ họ tên thì người ta sẽ gọi Tèo sẽ nhanh hơn :))
+
+Khởi tạo biến trong python
+
+```py
+[tên biến] = [giá trị cần gán]
+```
+>
+tên biến: là tên bất kì bạn muốn đặt (không chứ dấu cách). Ví dụ như: hoten1, diemtoan1, .....
+>
+giá trị cần gán: có thể là dữ liệu số, dữ liệu string, dữ liệu boolean (true/false),....
+>
+
+
+### **Sử dụng biến trong python**
+
+Thay vì chúng ta sử dụng giá trị thì chúng ta chỉ cần gọi tên biến. Ví dụ in ra màn hình họ tên của Nguyễn Văn A.
+
+```py
+print('Nguyễn Văn A') #in theo cách thông thường
+hoten1 = 'Nguyễn Văn A' #gán họ tên vào biến
+print(hoten1) #sử dụng biến hoten1 đã gán ở trên
+Khởi tạo nhiều biến
+```
+
+Để khởi tạo nhiều biến trong 1 dòng, chúng ta liệt kê các biến theo thứ tự và các giá trị theo thứ tự của biến và cách nhau bằng dấu phẩy
+
+> [biến 1], [biến 2], [biến3] = [giá trị 1], [giá trị 2], [giá trị 3]
+
+### **Kiểm tra kiểu dữ liệu của biến**
+
+Để kiểm tra kiểu dữ liệu của biến, chúng ta dùng câu lệnh 'type(biến cần kiểm tra)'
+
+Ví dụ in ra kiểu dữ liệu của biến:
+
+```py
+hoten1 = 'Nguyễn Văn A'
+print(type(hoten1))
+#Và kết quả trả về là: str (viết tắt của string). 
+#Ngoài ra còn có int (interger), bool (boolean), ....
+```
+
+<Image src="/blog/pythonbasic/5/2.png" width="300" height="150" />
+
+Như vậy là chúng ta đã xong phần biến rồi, chắc các bạn thấy cũng dễ thôi phải không :))
+
+Đón chờ bài viết tiếp theo chúng ta sẽ tìm hiểu kĩ hơn về kiểu dữ liệu số và kiểu dữ liệu chuỗi nhé (string đó)

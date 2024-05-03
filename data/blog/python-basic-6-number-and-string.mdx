@@ -1,0 +1,170 @@
+---
+title: Python basic 6 - Number and String
+tags: ["pythonbasic"]
+images: ['/blog/pythonbasic/6/1.png']
+date: "2019-02-17"
+summary: After a while of studying with Python, I decided to write a blog to summarize what I have learned or my way of learning about this language.
+draft: true
+---
+
+Hello các bạn.
+
+Ở bài trước mình đã giới thiệu về biến và cách ghi chú trong python. Bài này chúng ta sẽ cùng tìm hiểu về kiểu dữ liệu số và kiểu dữ liệu chuỗi nhé
+
+<Image src="/blog/pythonbasic/6/1.png" width="300" height="150" />
+
+### **Kiểu dữ liệu số**
+
+**Số nguyên**
+
+Số nguyên bao gồm các số nguyên dương (1, 2, 3, ...) và các số nguyên âm (-1, -2, -3, ...). Trong Python thì kiểu số nguyên không có gì khác biệt.
+
+Ví dụ gán giá trị một biến a với số 4 và in ra kiểu dữ liệu của biến a
+
+```py
+a = 4 #gán cho biến a số 4
+print(a) # in ra màn hình giá trị của a
+print(type(a)) # in ra màn hình kiểu dữ liệu của a
+Như các bạn thấy ở kết quả thì a là số nguyên thuộc lớp int trong Python.
+```
+
+Một điểm đáng chú ý trong python phiên bản mới 3.X đó là kiểu dữ liệu số nguyên là vô hạn. Do vậy bạn có thể tính toán với những con số có giá trị rất rất rất lớn. Đây là điều mà đa số các ngôn ngữ khác không thể làm được.
+
+**Số thực (float)**
+
+Số thực là tập hợp các số nguyên và số thập phân: 1.4, -123, 69.96, ...
+
+Ví dụ: gán giá trị của biến f là 3.45 và xuất ra kiểu dữ liệu của f. Đến đây các bạn thử gõ code xem nhé.
+
+Dựa vào kết quả có được thì biến f có giá trị 3.45 thuộc lớp float trong python
+
+Lưu ý: trong python phần nguyên và phần thập phân ngăn cách nhau bằng dấu chấm (.) và độ chính xác xấp xỉ 15 chữ số phần thập phân.
+
+```py
+print(10 / 3) # đây là một số vô hạn tuần hoàn 3.3333333333333333333.. 
+3.3333333333333335 
+```
+
+**Thư viên Decimal**
+
+Để có kết quả được chính xác hơn thì thư viện Decimal sẽ hỗ trợ bạn việc này. 
+
+Để dùng các hàm trong một nào đó trong python, chúng ta dùng lệnh: `from [tên thư viện] import *`
+
+<Image src="/blog/pythonbasic/6/2.png" width="300" height="150" />
+
+Phân số
+
+Để tạo vào dùng phân số ta dùng hàm Fraction: `Fraction(<Tử_số>, <Mẫu_số>)`
+
+```py
+Fraction(1, 4) # tạo phân số 1/4
+```
+
+<Image src="/blog/pythonbasic/6/3.png" width="300" height="150" />
+
+**Thư viện math trong python**
+
+Thư viện math trong python hỗ trợ rất nhiều hàm tính toán liên quan đến toán học.
+
+Để dùng thư viện nào đó, dúng ta dùng import như sau: `import [tên thư viên]`
+
+Sau đó để dùng các hàm trong thư viện thì ta dùng: `[tên thư viên].[tên hàm]`
+
+Khác với ở trên, nếu dùng: `from [tên thư viên] import * ` thì khi dùng hàm chúng ta ko cần gọi tên thư viện ở trước mà gọi thẳng tên hàm luôn.
+
+Các hàm đặc biệt trong thư viện math:
+
+>
+trunc(X) : Trả về số nguyên là phần nguyên của X
+>
+floor(X) : Trả về số nguyên được làm tròn giảm từ số X (luôn bé hơn hoặc bằng X)
+>
+ceil(X) : ngược lại với floor thì sẽ làm tròn lên (luôn lớn hơn hoặc bằng X)
+>
+fabs(X) : Trả về số thực là giá trị tuyệt đối của X
+>
+sqrt(X) : Trả về số thực bằng căn bậc 2 của X
+>
+gcd(X , Y) : Trả về số nguyên là ước chung lớn nhất của X và Y
+>
+
+Ví dụ: 
+
+```py
+import math #import 1 thư viện kiểu này thì khi gọi hàm sẽ phải có tên thư viện
+a = math.trunc(3.9) # gán biến a với hàm trunc(3.9) - lấy phần nguyên
+print(a) # in ra giá trị của biến a ta được kết quả là 3
+Tóm tắt lại: chúng ta đã tìm hiểu kiểu dữ liệu số là gì và các toán tử. Bên cạnh đó mình cũng giới thiệu 2 cách nhập thư viện vào (import) đó là:
+
+import math # import thư viện tên là math, khi sử dụng hàm sẽ phải gọi math.[tên hàm]
+from math import * #import tất cả các hàm trong thư viện math, khi sử dụng hàm sẽ gọi tên hàm luôn
+# Các bạn nên dùng cách import thứ 1, vì nhiều thư viện sẽ có nhiều hàm trùng tên nhau. Ngoài ra còn một cách import khác nữa cũng được nhiều người sử dụng. 
+
+import math as m1
+# Ở cách trên mình import thư viên math với 1 tên gọi khác là m1 (cái này tự đặt bất kì tên gì mà bạn muốn). Sau đó muốn dùng hàm trong thư viện math thì các bạn sẽ gọi: m1.trunc(). Tức là ở đây mình đã đổi tên thư viện math thành m1 cho tiện
+```
+
+### **Kiểu dữ liệu chuỗi**
+
+Chuỗi là những thứ được đặt trong ' ' hoặc " " hoặc '''  ''' hay """  """. 
+
+Ví dụ: `'Tôi là Bảo', "3"` đều là kiểu chuỗi (hay có thể nói là kiểu chữ)
+
+Vậy dấu nháy đơn và nháy kép khác nhau chỗ nào ? Thực ra thì 2 dấu này giống nhau, nhưng ko phải giống nhau thì để cho có.
+
+Ví dụ có một câu tiếng anh: I'm baolt. Trong câu có dấu nháy đơn rồi thì khi đặt vào chuỗi với dấu nháy đơn thì lập tức chương trình của mình sẽ bị báo lỗi. 
+
+Do vậy trong một chuỗi có chứa dấu nháy loại nào thì mình phải đổi sang dấu nháy loại kia để tránh lỗi không đáng có.
+
+**Chú thích nhiều dòng**
+
+Các chú thích với dấu thăng đầu dòng thường chỉ dùng cho các câu được ghi trong 1 dòng. Nhưng nhiều khi ghi trải dài thành 1 dòng sẽ cảm thấy rất khó chịu. Do mình chúng ta sẽ sử dụng đôi 3 dấu nháy để tạo một chuỗi ghi được nhiều dòng.
+
+Ví dụ:
+```py
+''' 
+Đây là chương trình 2
+Được sử dụng như chương trình 1
+Có thể ghi được nhiều dùng mà không
+cần dùng dấu thăng # 
+'''
+```
+
+<Image src="/blog/pythonbasic/6/4.png" width="300" height="150" />
+
+**Toán tử với chuỗi**
+
+Để ghép chuỗi chúng ta dùng dấu cộng như trong toán học nhưng chỉ ghép được các kiểu dữ liệu là chuỗi với nhau, không ghép được chuỗi với kiểu dữ liệu số, cần phải biến dữ liệu số thành dữ liệu chuỗi bằng hàm `str()`. Vậy những chuỗi là số 3 ví dụ như `'3'` muốn biến đổi thành dữ liệu số thì dùng hàm `int()`. Ví dụ: `int('3')` kết quả sẽ là 3 ở đạng kiểu số, lúc đó chúng ta sẽ sử dụng toán tử với số được.
+
+Ví dụ:
+<Image src="/blog/pythonbasic/6/5.png" width="300" height="150" />
+
+Để tạo nhiều kĩ tự giống nhau, chúng ta dùng dấu nhân *
+
+Ví dụ: Tạo 10 kí tự a
+<Image src="/blog/pythonbasic/6/6.png" width="300" height="150" />
+
+Toán tử `in` để kiểm tra 1 phần tử có trong chuỗi hay không và kết quả trả về sẽ là `True` hoặc `False`
+
+Ví dụ:
+
+<Image src="/blog/pythonbasic/6/7.png" width="300" height="150" />
+
+**Indexing và cắt chuỗi**
+
+*Indexing* là lấy vị trí thứ mấy ở trong chuỗi. Ở trong lập trình, index được bắt đầu từ 0, để gọi vị trí đầu tiền của 1 chuỗi với biến X, chúng ta gọi X[0]. Tương tự ví trí thứ 2 là X[1], .....
+
+Ví dụ: lấy vị trí đầu tiên
+
+```py
+X = 'Tôi là sinh viên Ngoại Thương' 
+print(X[0])
+# Để cắt chuỗi, ví dụ chúng ta cắt từ vị trí đầu tiên là index 0, cho đến vị trí index 16 của chuỗi trên, chúng ta dùng X[0:16] hoặc X[:16] mặc định ko ghi sỗ 0 thì python cũng hiểu là từ vị trí thứ 0
+```
+
+<Image src="/blog/pythonbasic/6/8.png" width="300" height="150" />
+
+Ví trí index âm của chuỗi. Trong lập trình, index được bắt đầu từ 0, vậy có index âm không ? Mình xin trả lời là có. Trong python, nếu lấy index dương của chuỗi sẽ lấy từ trái qua phải. Còn index âm sẽ lấy từ phải qua trái. Các bạn hãy thử mà xem :3 
+
+Vậy là bài này sẽ khá là dài nhưng cũng rất đơn giản, các bạn hãy chịu khó đọc nhé :3 

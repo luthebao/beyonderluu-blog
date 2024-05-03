@@ -1,0 +1,80 @@
+---
+title: Python Django - How to deploy one or many django-websites using IIS
+tags: ["django"]
+images: ['/blog/django/2/1.png']
+date: "2021-02-13"
+summary: Deploying Django with IIS, you can deploy one or many projects on windows.
+draft: false
+---
+
+Hello everyone,
+
+Today I'm gonna make a tutorial about deploying Django with IIS. With IIS, you can deploy one or many projects.
+
+<Image src="/blog/django/2/1.png" width="300" height="150" />
+
+Let's find out !!!
+
+1. Create a folder project on `"D:\"` or wherever you want, then install virtualenv with: `pip install virtualenv`
+
+<Image src="/blog/django/2/2.png" width="300" height="150" />
+
+2. Create ENV in project folder with: `virtualenv venv`. Activate venv with command: `venv\Scripts\active`. It will appear (venv) in front of the command line
+
+<Image src="/blog/django/2/3.png" width="300" height="150" />
+
+3. Install django and wfastcgi with: `pip install django wfastcgi`. Then create django project on the folder you created above. Example: `django-admin startproject testiis`
+
+<Image src="/blog/django/2/4.png" width="300" height="150" />
+
+4. Open IIS, create a new website, change the Physical path to your Django Project. I'm using port 88 because my other project took port 80.
+
+<Image src="/blog/django/2/5.png" width="300" height="150" />
+
+5. Click to the main Server and choose `FastCGI Settings` *Full-Path* you will fill with the path to the *python.exe* in *venv*. And Arguments is the path to wfastcgi.py in venv like this:
+
+<Image src="/blog/django/2/6.png" width="300" height="150" />
+
+<Image src="/blog/django/2/7.png" width="300" height="150" />
+
+6. Then choose Handler Mappings to set up Module Mapping. Click **Add Module Mapping...**
+
+<Image src="/blog/django/2/8.png" width="300" height="150" />
+
+7. An windows popup, fill in the form like this. 
+>
+>
+Request path: *
+Module: You choose FastCgiModule
+Executable: path\to\venv\python.exe|path\to\venv\wfastcgi.py
+Then click Request Restrictions..., untick the Invoke handle ....
+>
+
+<Image src="/blog/django/2/9.png" width="300" height="150" />
+
+<Image src="/blog/django/2/10.png" width="300" height="150" />
+
+8. Then click OK, a popup shows out, click **No**
+
+<Image src="/blog/django/2/11.png" width="300" height="150" />
+
+9. A file with the name **web.config** will appear in the django project 's folder, add some config above the `<system.webServer>`
+
+```xml
+<appSettings>
+    <!-- Required settings -->
+    <add key="WSGI_HANDLER" value="django.core.wsgi.get_wsgi_application()" />
+    <!-- Your django path -->
+    <add key="PYTHONPATH" value="D:\MyDemo\testiis" /> 
+    <!-- Your djangoname.settings -->
+    <add key="DJANGO_SETTINGS_MODULE" value="testiis.settings" />
+</appSettings>
+```
+
+10. Now you can run website with your domain and port you setup above
+
+<Image src="/blog/django/2/12.png" width="300" height="150" />
+
+You can watch the video bellow:
+
+[Click to watch video](https://www.youtube.com/watch?v=ZU-LEozenAg)
