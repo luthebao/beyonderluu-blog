@@ -11,27 +11,27 @@ Hello everyone,
 
 Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. We usually run it by command line "python manage.py runserver", but today I'm gonna make a tutorial to run your django project with XAMPP.
 
-<Image src="/blog/django/1/1.png" width="300" height="150" />
+![img](/blog/django/1/1.png)
 
 **First** of all, you need to setup python (of course), XAMPP (any version with this link) and Visual C++ Build Tools (required)
 
 __Then__ Create your own django project, there are many tutorial about django on youtube that you can learn from. In this tutorial, I created my project with name "my_blog" and put it at Desktop.
 
-<Image src="/blog/django/1/2.png" width="300" height="150" />
+![img](/blog/django/1/2.png)
 
 __Next step__, set the Enviroment Variable for MOD_WSGI_APACHE_ROOTDIR to the path of apache. Here we are using XAMPP so I put it with "C:\xampp\apache"
 
-<Image src="/blog/django/1/3.png" width="300" height="150" />
+![img](/blog/django/1/3.png)
 
 __Next step__, install mod_wsgi package with following command: pip install mod_wsgi.
 Then, run the following command and copy all the result to anywhere, we will need for the next step:
 "mod_wsgi-express module-config"
 
-<Image src="/blog/django/1/4.png" width="300" height="150" />
+![img](/blog/django/1/4.png)
 
 __Next step__, look at the second line of the photo above "LoadModule wsgi_module ...". It take us to the file "mod_wsgi.cp37-win_amd64.pyd". Copy it to folder modules of apache "C:\xampp\apache\modules" and rename it and its extension ".pyd" to "mod_wsgi.so"
 
-<Image src="/blog/django/1/5.png" width="300" height="150" />
+![img](/blog/django/1/5.png)
 
 __And the final important step__, we will add some lines to Apache (httpd.conf). Go to the end of the file httpd.conf and copy these to yours:
 
@@ -64,7 +64,3 @@ Alias /static/ C:/Users/BaoLT/Desktop/my_blog/static/
 >
 
 In this tutorial, I put my project in desktop so you should change the path to your project and the path to your python version. If you don't have a static or media file, you can delete its lines.
-
-You can watch this video:
-
-[Click to watch video](https://www.youtube.com/watch?v=qOHvo1tjn40&)

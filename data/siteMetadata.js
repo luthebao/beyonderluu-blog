@@ -6,15 +6,15 @@ const siteMetadata = {
     description: "I'm a Dream maker🍊",
     summary: "I'm a Dream maker🍊",
     language: 'en-us',
-    theme: 'system', // system, dark or light
+    theme: 'light', // system, dark or light
     siteUrl: 'https://beyonderluu.com',
-    siteRepo: 'https://github.com/luthebao',
+    siteRepo: 'https://github.com/luthebao/beyonderluu-blog',
     siteLogo: '/static/images/logo.png?v=1',
     image: '/static/images/avatar.png',
     socialBanner: '/static/images/twitter-card.png',
     email: 'beyonderluu@gmail.com',
     github: 'https://github.com/luthebao',
-    twitter: '',
+    // twitter: '',
     facebook: 'https://facebook.com/beyonderluu',
     locale: 'en-US',
     analytics: {
